@@ -33,6 +33,8 @@ alias psg 'ps aux | rg'
 
 abbr py python
 
+fish_add_path -p -m ~/.local/bin/
+
 if test -f ~/.config/fish/local.fish
     source ~/.config/fish/local.fish
 end
