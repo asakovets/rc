@@ -16,8 +16,6 @@ alias	o "xdg-open"
 alias	cls "clear"
 
 abbr --add --position anywhere L '| less'
-abbr --add re-ne --set-cursor 'readelf --all % | rg NEEDED'
-abbr --add re-rp --set-cursor 'readelf --all % | rg "RUNPATH|RPATH"'
 
 alias ob objdump
 alias re readelf
