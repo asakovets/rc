@@ -2,6 +2,10 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+if ! type --query mise
+    curl https://mise.run | sh
+end
+
 if type --query mise
     mise activate fish | source
 end
