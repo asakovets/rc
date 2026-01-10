@@ -16,8 +16,8 @@ alias ... 'cd ../..'
 alias .... 'cd ../../..'
 alias ..... 'cd ../../../../'
 
-alias	o "xdg-open"
-alias	cls "clear"
+alias	o open
+alias	cls clear
 
 abbr --add --position anywhere L '| less'
 
