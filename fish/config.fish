@@ -28,8 +28,8 @@ alias psg 'ps aux | rg'
 
 fish_add_path -p -m ~/.local/bin/
 
-if test -f ~/.config/fish/local.fish
-    source ~/.config/fish/local.fish
+if test -f ~/.config/fish/user.fish
+    source ~/.config/fish/user.fish
 end
 
 if string length -q -- $TMUX
