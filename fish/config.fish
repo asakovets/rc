@@ -19,8 +19,6 @@ alias ..... 'cd ../../../../'
 alias	o open
 alias	cls clear
 
-abbr --add --position anywhere L '| less'
-
 alias ob objdump
 alias re readelf
 alias ni ninja
@@ -28,11 +26,15 @@ alias ni ninja
 alias +x 'chmod +x'
 alias psg 'ps aux | rg'
 
-abbr py python
-
 fish_add_path -p -m ~/.local/bin/
 
 if test -f ~/.config/fish/local.fish
     source ~/.config/fish/local.fish
+end
+
+if string length -q -- $TMUX
+    function nt
+        tmux new-window $argv -- fish
+    end
 end
 
