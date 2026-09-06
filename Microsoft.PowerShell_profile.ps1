@@ -21,11 +21,12 @@ function prompt {
     "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
 }
 
-# $uutilsAliases = @(
-#   'ls','cat','cp','mv','rm','pwd','sleep','tee','mkdir','rmdir','date','echo','uptime'
-# )
-# foreach ($name in $uutilsAliases) {
-#   Remove-Alias -Name $name -Force -ErrorAction SilentlyContinue
-# }
-#
-# function ls { & ls.exe --color=auto @args }
+$uutilsAliases = @(
+  'ls','cat','cp','mv','rm','pwd','sleep','tee','mkdir','rmdir','date','echo','uptime'
+)
+foreach ($name in $uutilsAliases) {
+  Remove-Alias      -Name $name         -Force  -ErrorAction SilentlyContinue
+  Remove-Item       "Function:\$name"           -ErrorAction SilentlyContinue
+}
+
+function ls { & ls.exe --color=auto @args }
