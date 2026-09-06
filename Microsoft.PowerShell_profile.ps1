@@ -21,18 +21,11 @@ function prompt {
     "${osc7}PS $p$('>' * ($nestedPromptLevel + 1)) ";
 }
 
-if (Get-Command coreutils.exe -ErrorAction SilentlyContinue) {
-    remove-alias ls,rm,cp,mv,echo
-
-    function ls {
-        param(
-            [Parameter(ValueFromRemainingArguments = $true)]
-            $args
-        )
-        $lsPath = (Get-Command ls.exe -ErrorAction SilentlyContinue).Source
-        if (-not $lsPath) {
-            throw "Could not find external ls.exe"
-        }
-        & $lsPath --color=auto @args
-    }
-}
+# $uutilsAliases = @(
+#   'ls','cat','cp','mv','rm','pwd','sleep','tee','mkdir','rmdir','date','echo','uptime'
+# )
+# foreach ($name in $uutilsAliases) {
+#   Remove-Alias -Name $name -Force -ErrorAction SilentlyContinue
+# }
+#
+# function ls { & ls.exe --color=auto @args }
